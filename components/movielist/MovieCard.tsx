@@ -20,7 +20,7 @@ export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
     <div
       onClick={HandleClick}
       className={cn(
-        "overflow-hidden rounded-2xl hover:shadow-2xl duration-100",
+        "overflow-hidden rounded-2xl hover:shadow-2xl  duration-100",
         containercss
       )}
     >

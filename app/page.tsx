@@ -10,7 +10,7 @@ async function Home() {
   const top_ratedMovieData = await getMovies("top_rated");
 
   return (
-    <div className="mt-10 flex flex-col gap-20">
+    <div className="mt-5 flex flex-col gap-20">
       <div className="justify-center  flex items-center">
         <Navigation />
       </div>

@@ -20,9 +20,11 @@ export type GenreType = {
 };
 export type MovieDetailProps = {
   movie: MovieType;
+
   credits: {
     director: string;
     writers: string;
     stars: string[];
   };
+  trailerUrl: string;
 };
