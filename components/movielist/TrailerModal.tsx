@@ -22,7 +22,7 @@ export const TrailerModals = ({ text, buttoncss, trailerUrl }: Props) => {
       </DialogTrigger>
       <DialogContent className="w-[900px] h-[500px] ">
         <div className="w-[900px] h-full">
-          <ReactPlayer url={trailerUrl} width="100%" height="100%" controls />
+          {/* <ReactPlayer url={trailerUrl} width="100%" height="100%" controls /> */}
         </div>
       </DialogContent>
     </Dialog>

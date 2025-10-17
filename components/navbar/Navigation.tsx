@@ -2,7 +2,7 @@
 
 import { ModeToggle } from "../ui/mode-toggle";
 import { Input } from "../ui/input";
-import { Genrelist } from "../genre/GenreList";
+import { GenreList } from "../genre/GenreList";
 import { movieGenres } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -36,7 +36,7 @@ export const Navigation = () => {
               </DropdownMenuLabel>
               <DropdownMenuSeparator className="my-2" />
               <DropdownMenuItem>
-                <Genrelist text="jdfk" genres={movieGenres} />
+                <GenreList />
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

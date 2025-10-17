@@ -1,13 +1,21 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import { GenreType } from "@/lib/types";
 
 import Link from "next/link";
-type Props = {
-  genres: GenreType[];
-  text: string;
-};
-export const Genrelist = ({ genres }: Props) => {
+import { getGenreList } from "@/lib/api/getGenresList";
+
+export const GenreList = () => {
+  const [genres, setGenres] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchGenres = async () => {
+      const data = await getGenreList();
+      setGenres(data);
+    };
+    fetchGenres();
+  }, []);
+
   return (
     <div className="w-[577px]  h-[250px]">
       <div className="flex  ml-5 justify-between w-full">
@@ -17,11 +25,11 @@ export const Genrelist = ({ genres }: Props) => {
         {genres.map((genre) => (
           <Link
             key={genre.id}
-            href={`/genre?genreId=${genre.id}&genreName=${genre.text}`}
+            href={`/genre?genreId=${genre.id}&genreName=${genre.name}`}
           >
             <div className="pb-2">
               <button className="border  border-gray-200 hover:bg-gray-300 flex gap-0.5  justify-center px-1.5 rounded-lg text-black  font-semibold">
-                <p key={genre.id}>{genre.text}</p>
+                <p key={genre.id}>{genre.name}</p>
                 <img src="/chevron-right.svg" alt="" />
               </button>
             </div>

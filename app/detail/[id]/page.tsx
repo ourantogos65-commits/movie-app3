@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navbar/Navigation";
 import { getCredits } from "@/lib/api/getCredits";
 import { getTrailer } from "@/lib/api/getTrailer";
 import { Footer } from "@/components/footer/Footer";
+import { getMovies } from "@/lib/api/getMovies";
 
 async function DetailPage({ params }: { params: { id: string } }) {
   const movie = await getMovieById(params.id);
@@ -23,7 +24,12 @@ async function DetailPage({ params }: { params: { id: string } }) {
     <div>
       <Navigation />
       <div className="flex flex-col gap-10">
-        <MovieDetail credits={credits} movie={movie} trailerUrl={trailerUrl} />
+        <MovieDetail
+          credits={credits}
+          movie={movie}
+
+          // trailerUrl={trailerUrl}
+        />
 
         <SimilarMovies text="More Like This" movies={similarMovieData} />
 

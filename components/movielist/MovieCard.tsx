@@ -3,16 +3,23 @@ import { MovieType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-type Props = {
+import { useState } from "react";
+import { Star } from "lucide-react";
+interface Props {
   movie: MovieType;
   containercss: string;
   imgclassname: string;
-};
+}
 export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
   const { title, vote_average, poster_path, id } = movie;
+  const [star, setStar] = useState(false);
   console.log(movie);
-  const router = useRouter();
 
+  const HandlChangeStar = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setStar(!star);
+  };
+  const router = useRouter();
   const HandleClick = () => {
     router.push(`/detail/${id}`);
   };
@@ -29,9 +36,16 @@ export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
         alt={`Poster of ${title}`}
         className={cn(imgclassname)}
       />
-      <div className="bg-gray-300 h-50 ">
+      <div className="bg-gray-300 h-50 p-2 ">
         <div className="flex items-center  text-black gap-2">
-          <img src="/star.svg" alt="Star" className="w-5" />
+          <Star
+            onClick={HandlChangeStar}
+            className={cn(
+              "w-5 cursor-pointer",
+              star ? "text-yellow-400" : "text-gray-400"
+            )}
+          />
+          {/* <img src="/star.svg" alt="Star" className="w-5" /> */}
           <p>
             <span>{vote_average}</span>/10
           </p>

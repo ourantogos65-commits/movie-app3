@@ -1,7 +1,7 @@
 import { MovieCard } from "../movielist/MovieCard";
 import { MovieType } from "@/lib/types";
 import { movieGenres } from "@/lib/utils";
-import { Genrelist } from "./GenreList";
+import { GenreList } from "./GenreList";
 type Props = {
   genreName: string;
   movies: MovieType[];
@@ -13,10 +13,10 @@ export const GenreEffect = ({ genreName, movies }: Props) => {
       <div className="w-full flex flex-col gap-10  items-center justify-center ">
         <div className="flex gap-[16px] justify-between  w-[1280px] ">
           <div className="w-[307px] flex flex-wrap">
-            <Genrelist text="dfhj" genres={movieGenres} />
+            <GenreList />
           </div>
           <div className="w-[806px] flex-wrap  gap-3 justify-center flex">
-            {movies.results?.splice(0, 12).map((movie) => (
+            {movies.results?.splice(0, 12).map((movie: MovieType) => (
               <MovieCard
                 key={movie.id}
                 movie={movie}
