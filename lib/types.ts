@@ -26,5 +26,5 @@ export type MovieDetailProps = {
     writers: string;
     stars: string[];
   };
-  trailerUrl: string;
+  trailerUrl: any;
 };

@@ -1,7 +1,7 @@
 import { MovieDetailProps, MovieType } from "@/lib/types";
 import { credits } from "@/lib/utils";
-// import { TrailerModals } from "../movielist/TrailerModal";
-export const MovieDetail = ({ movie, credits }: MovieDetailProps) => {
+import { TrailerModals } from "../movielist/TrailerModal";
+export const MovieDetail = ({ movie, credits ,trailerUrl}: MovieDetailProps) => {
   return (
     <div className="flex mt-20  flex-col gap-6 justify-center items-center">
       <div className="flex  w-[1080px] justify-between h-[72px]">
@@ -41,11 +41,11 @@ export const MovieDetail = ({ movie, credits }: MovieDetailProps) => {
         >
           <div className="mt-[370px] ml-5 ">
             <div className="flex gap-2">
-              {/* <TrailerModals
+              <TrailerModals
                 trailerUrl={trailerUrl}
                 buttoncss="rounded-full w-[40px] h-[40px]"
                 text="📽️"
-              /> */}
+              />
               <p className="pt-2"> Play trailer</p>
             </div>
           </div>

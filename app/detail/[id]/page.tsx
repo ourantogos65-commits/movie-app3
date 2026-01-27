@@ -27,8 +27,7 @@ async function DetailPage({ params }: { params: { id: string } }) {
         <MovieDetail
           credits={credits}
           movie={movie}
-
-          // trailerUrl={trailerUrl}
+          trailerUrl={trailerUrl}
         />
 
         <SimilarMovies text="More Like This" movies={similarMovieData} />
