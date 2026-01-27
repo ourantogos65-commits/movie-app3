@@ -10,13 +10,13 @@ type Props = {
 
 export const MovieCardList = ({ movies, text, category }: Props) => {
   return (
-    <div className="flex flex-col gap-3 px-5 ">
-      <div className="flex justify-between">
-        <h1 className="text-3xl text-bold "> {text} 🎬</h1>
-        <Link href={`/category${category}`}>see more 🍿</Link>
+    <div className="flex flex-col gap-3  ">
+      <div className="flex justify-between px-5">
+        <h1 className="text-2xl font-semibold mb-5 "> {text} </h1>
+        <Link  href={`/category/${category}`}>see more →</Link>
       </div>
 
-      <div className="flex gap-10 flex-wrap ">
+      <div className="grid gap-10 grid-cols-5  ">
         {movies.slice(0, 10).map((movie) => (
           <MovieCard
             imgclassname="h-[340px] w-full "

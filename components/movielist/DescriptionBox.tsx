@@ -23,7 +23,7 @@ export const DescriptionBox = ({ texth2, texth1, textp, vo }: Texttype) => {
 
       <p className="text-xs">{textp} </p>
       <TrailerModals
-        buttoncss="w-[145px] h-[40px] rounded-2xl"
+        buttoncss="w-[145px] h-[40px] rounded-md"
         text="watch trailer"
         trailerUrl="dfb"
       />

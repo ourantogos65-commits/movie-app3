@@ -18,7 +18,7 @@ const page = async ({ searchParams }: GenrePageProps) => {
   const movies = await getMovies();
   return (
     <div className="items-center">
-      <Navigation />
+ 
 
       <GenreEffect movies={movies} genreName={genreName} />
     </div>

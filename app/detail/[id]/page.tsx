@@ -22,7 +22,7 @@ async function DetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div>
-      <Navigation />
+     
       <div className="flex flex-col gap-10">
         <MovieDetail
           credits={credits}
@@ -33,7 +33,7 @@ async function DetailPage({ params }: { params: { id: string } }) {
 
         <SimilarMovies text="More Like This" movies={similarMovieData} />
 
-        <Footer />
+      
       </div>
     </div>
   );

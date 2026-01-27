@@ -15,11 +15,9 @@ async function Home() {
   //   return <Loader />;
   // }
   return (
-    <div className="mt-5 flex flex-col gap-20">
-      <div className="justify-center  flex items-center">
-        <Navigation />
-      </div>
-      <div className="mt-10 w-full flex flex-col ">
+    <div className=" flex flex-col gap-20 w-[1440px] mx-auto">
+     
+      <div className=" w-full flex flex-col ">
         <CarouselContainer movies={nowplayingMovieData} />
       </div>
       <MovieCardList

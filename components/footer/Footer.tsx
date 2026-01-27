@@ -1,6 +1,7 @@
 export const Footer = () => {
   return (
-    <div className="flex  h-[280px] w-full items-center bg-indigo-700 py-[40px] ">
+    <div className=" mt-20  w-[1440px] mx-auto">
+<div className="flex  text-white h-[280px] w-full items-center bg-indigo-700 py-[40px] pl-10">
       <div className="w-[1280px] h-[200px] gap-[120px] flex justify-between  ">
         <div className="w-[247px]">
           <div className="flex gap-2">
@@ -34,5 +35,7 @@ export const Footer = () => {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };

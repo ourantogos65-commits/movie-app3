@@ -18,9 +18,7 @@ export const GenreList = () => {
 
   return (
     <div className="w-[577px]  h-[250px]">
-      <div className="flex  ml-5 justify-between w-full">
-        <p className="text-black  text-2xl">Genres</p>
-      </div>
+      <div className="flex  ml-5 justify-between w-full"></div>
       <div className="gap-2 w-full flex-wrap flex p-[8px]">
         {genres.map((genre) => (
           <Link
