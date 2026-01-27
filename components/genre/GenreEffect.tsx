@@ -15,7 +15,7 @@ export const GenreEffect = ({ genreName, movies }: Props) => {
         </h1>
         <div className="flex gap-[16px] justify-between   w-[1280px] ">
           <div>
-            <h2 className="text-black  font-medium mr-4 text-2xl">Genres</h2>
+            <h2 className="text-auto  font-medium mr-4 text-2xl">Genres</h2>
             <p className="text-gray-500 mb-3">see list of movies by genre</p>
             <div className="w-[407px] flex flex-wrap">
               <GenreList />

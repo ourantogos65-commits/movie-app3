@@ -59,7 +59,23 @@ export const Navigation = () => {
 
         <div className="flex items-center gap-8 ">
           <DropdownMenu>
-            <DropdownMenuTrigger className="px-3 py-1 bg-white rounded-md shadow hover:bg-gray-100 transition">
+            <DropdownMenuTrigger className="px-3 gap-1 flex py-1 bg-background rounded-md shadow hover:bg-gray-100 transition">
+              <span className="mt-1 text-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M4 6L8 10L12 6"
+                    stroke="#FAFAFA"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
               Genre
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mt-4">

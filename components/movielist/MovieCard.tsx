@@ -28,7 +28,7 @@ export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
       onClick={HandleClick}
       className={cn(
         "overflow-hidden rounded-2xl hover:shadow-2xl  duration-100",
-        containercss
+        containercss,
       )}
     >
       <img
@@ -36,13 +36,13 @@ export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
         alt={`Poster of ${title}`}
         className={cn(imgclassname)}
       />
-      <div className="bg-gray-300 h-50 p-2 ">
-        <div className="flex items-center  text-black gap-2">
+      <div className=" bg-gray-300 dark:bg-gray-600 h-50 p-2 ">
+        <div className="flex items-center  text-auto gap-2">
           <Star
             onClick={HandlChangeStar}
             className={cn(
               "w-5 cursor-pointer",
-              star ? "text-yellow-400" : "text-gray-400"
+              star ? "text-yellow-400" : "text-gray-400",
             )}
           />
           {/* <img src="/star.svg" alt="Star" className="w-5" /> */}
@@ -50,7 +50,7 @@ export const MovieCard = ({ movie, containercss, imgclassname }: Props) => {
             <span>{vote_average}</span>/10
           </p>
         </div>
-        <p className="text-black  text-sm font-bold">{title}</p>
+        <p className="text-auto  text-sm font-bold">{title}</p>
       </div>
     </div>
   );
