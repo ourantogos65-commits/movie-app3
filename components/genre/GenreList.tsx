@@ -4,6 +4,7 @@ import { GenreType } from "@/lib/types";
 
 import Link from "next/link";
 import { getGenreList } from "@/lib/api/getGenresList";
+import { ChevronDown, ChevronLeft, ChevronRightIcon } from "lucide-react";
 
 export const GenreList = () => {
   const [genres, setGenres] = useState<any[]>([]);
@@ -28,20 +29,7 @@ export const GenreList = () => {
             <div className="pb-2">
               <button className="border  border-gray-200 hover:bg-gray-300 flex gap-0.5  justify-center px-1.5 rounded-lg text-auto  font-semibold">
                 <p key={genre.id}>{genre.name}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <path
-                    d="M6 12L10 8L6 4"
-                    stroke="#FAFAFA"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <ChevronRightIcon className="pt-1" size={16} strokeWidth={2} />
               </button>
             </div>
           </Link>

@@ -2,17 +2,16 @@ import { getMovieById } from "@/lib/api/getMovieByid";
 import { MovieDetail } from "@/components/moviedetail/MovieDetail";
 import { getSimilarMovie } from "@/lib/api/getSimilarMovies";
 import { SimilarMovies } from "@/components/moviedetail/SimiliarMovies";
-import { Navigation } from "@/components/navbar/Navigation";
 import { getCredits } from "@/lib/api/getCredits";
 import { getTrailer } from "@/lib/api/getTrailer";
-import { Footer } from "@/components/footer/Footer";
-import { getMovies } from "@/lib/api/getMovies";
 
-async function DetailPage({ params }: { params: { id: string } }) {
-  const movie = await getMovieById(params.id);
-  const similarMovieData = await getSimilarMovie(params.id);
-  const credits = await getCredits(params.id);
-  const trailerUrl = await getTrailer(params.id);
+async function DetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+
+  const movie = await getMovieById(id);
+  const similarMovieData = await getSimilarMovie(id);
+  const credits = await getCredits(id);
+  const trailerUrl = await getTrailer(id);
 
   if (trailerUrl) {
     console.log("Trailer URL:", trailerUrl);
@@ -22,17 +21,9 @@ async function DetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div>
-     
       <div className="flex flex-col gap-10">
-        <MovieDetail
-          credits={credits}
-          movie={movie}
-          trailerUrl={trailerUrl}
-        />
-
+        <MovieDetail credits={credits} movie={movie} trailerUrl={trailerUrl} />
         <SimilarMovies text="More Like This" movies={similarMovieData} />
-
-      
       </div>
     </div>
   );

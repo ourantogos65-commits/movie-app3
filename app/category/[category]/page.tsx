@@ -1,5 +1,6 @@
 import { MovieCard } from "@/components/movielist/MovieCard";
 import { getMovies } from "@/lib/api/getMovies";
+import { MovieType } from "@/lib/types";
 
 type Props = {
   params: Promise<{
@@ -29,7 +30,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       <h1 className="text-2xl font-bold mb-8 capitalize">{category}</h1>
 
       <div className="grid grid-cols-5 gap-10">
-        {movies.map((movie: any) => (
+        {movies.map((movie: MovieType) => (
           <MovieCard
             key={movie.id}
             movie={movie}

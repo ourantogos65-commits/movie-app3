@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Star } from "lucide-react";
+
 interface Props {
   movie: MovieType;
   containercss: string;

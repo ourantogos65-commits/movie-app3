@@ -1,6 +1,6 @@
 import { axiosInstance, credits } from "@/lib/utils";
 import { GenreEffect } from "@/components/genre/GenreEffect";
-import { Navigation } from "@/components/navbar/Navigation";
+
 type GenrePageProps = {
   searchParams: Promise<{ genreId: string; genreName: string; page?: string }>;
 };

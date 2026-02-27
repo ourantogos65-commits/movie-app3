@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
 import { ModeToggle } from "../ui/mode-toggle";
 import { Input } from "../ui/input";
 import { GenreList } from "../genre/GenreList";
-
+import { ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -60,21 +59,8 @@ export const Navigation = () => {
         <div className="flex items-center gap-8 ">
           <DropdownMenu>
             <DropdownMenuTrigger className="px-3 gap-1 flex py-1 bg-background rounded-md shadow hover:bg-gray-100 transition">
-              <span className="mt-1 text-auto">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <path
-                    d="M4 6L8 10L12 6"
-                    stroke="#FAFAFA"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <span className="mt-1 text-auto ">
+                <ChevronDown size={16} strokeWidth={2} />
               </span>
               Genre
             </DropdownMenuTrigger>
