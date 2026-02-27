@@ -2,17 +2,17 @@ import { MovieCard } from "@/components/movielist/MovieCard";
 import { getMovies } from "@/lib/api/getMovies";
 
 type Props = {
-  params: {
+  params: Promise<{
     category: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     page?: string;
-  };
+  }>;
 };
 
 export default async function CategoryPage({ params, searchParams }: Props) {
-  const { category } = params;
-  const page = searchParams.page || "1";
+  const { category } = await params;
+  const { page = "1" } = await searchParams;
 
   const movies = await getMovies(category);
 
