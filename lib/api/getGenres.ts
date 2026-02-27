@@ -1,5 +1,5 @@
 import { axiosInstance } from "@/lib/utils";
-import { MovieType } from "@/lib/types";
+
 
 export const getGenres = async (genreId: string, page: string) => {
   try {

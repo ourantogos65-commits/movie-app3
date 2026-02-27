@@ -2,7 +2,6 @@
 import { MovieType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useState } from "react";
 import { Star } from "lucide-react";
 interface Props {
