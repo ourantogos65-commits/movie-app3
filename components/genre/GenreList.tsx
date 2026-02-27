@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import { getGenreList } from "@/lib/api/getGenresList";
-import { ChevronDown, ChevronLeft, ChevronRightIcon } from "lucide-react";
-
+import { ChevronRightIcon } from "lucide-react";
+type GenreType = {
+  id: number;
+  name: string;
+};
 export const GenreList = () => {
-  const [genres, setGenres] = useState<any[]>([]);
+  const [genres, setGenres] = useState<GenreType[]>([]);
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -27,7 +30,7 @@ export const GenreList = () => {
           >
             <div className="pb-2">
               <button className="border  border-gray-200 hover:bg-gray-300 flex gap-0.5  justify-center px-1.5 rounded-lg text-auto  font-semibold">
-                <p key={genre.id}>{genre.name}</p>
+                <p>{genre.name}</p>
                 <ChevronRightIcon className="pt-1" size={16} strokeWidth={2} />
               </button>
             </div>

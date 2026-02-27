@@ -1,6 +1,5 @@
 import { MovieCard } from "../movielist/MovieCard";
 import { MovieType } from "@/lib/types";
-import { movieGenres } from "@/lib/utils";
 import { GenreList } from "./GenreList";
 type Props = {
   genreName: string;
@@ -25,7 +24,7 @@ export const GenreEffect = ({ genreName, movies }: Props) => {
 
           <div>
             <h1 className="text-md mb-3 ml-15 flex gap-2  font-extra-bold ">
-              <span>{movieList.length}</span> titles in "{genreName}"
+              <span>{movieList.length}</span> titles in &quot;{genreName}&quot;
             </h1>
             <div className="w-[806px] flex-wrap  gap-3 justify-center flex">
               {movieList.slice(0, 12).map((movie: MovieType) => (
