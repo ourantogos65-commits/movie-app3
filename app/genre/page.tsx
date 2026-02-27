@@ -10,7 +10,7 @@ const page = async ({ searchParams }: GenrePageProps) => {
 
   const getMovies = async () => {
     const response = await axiosInstance.get(
-      `/discover/movie?language=en&with_genres=${genreId}&page=${page}`
+      `/discover/movie?language=en&with_genres=${genreId}&page=${page}`,
     );
 
     return response.data;
@@ -18,9 +18,7 @@ const page = async ({ searchParams }: GenrePageProps) => {
   const movies = await getMovies();
   return (
     <div className="items-center">
- 
-
-      <GenreEffect movies={movies} genreName={genreName} />
+      <GenreEffect movies={movies.results} genreName={genreName} />
     </div>
   );
 };

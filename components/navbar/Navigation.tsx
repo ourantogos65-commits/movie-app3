@@ -109,7 +109,6 @@ export const Navigation = () => {
                           ? `https://image.tmdb.org/t/p/w92${movie.poster_path}`
                           : "/no-image.png"
                       }
-                      alt={movie.title}
                       className="w-[67px] h-[100px] rounded object-cover"
                     />
                     <div className="flex flex-col justify-between w-full p-1">

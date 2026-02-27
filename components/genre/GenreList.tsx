@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { GenreType } from "@/lib/types";
 
 import Link from "next/link";
 import { getGenreList } from "@/lib/api/getGenresList";

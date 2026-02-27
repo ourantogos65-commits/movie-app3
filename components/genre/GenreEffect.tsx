@@ -4,9 +4,10 @@ import { movieGenres } from "@/lib/utils";
 import { GenreList } from "./GenreList";
 type Props = {
   genreName: string;
-  movies: MovieType[];
+  movies: MovieType[] | undefined;
 };
 export const GenreEffect = ({ genreName, movies }: Props) => {
+  const movieList = Array.isArray(movies) ? movies : [];
   return (
     <div className="mt-10 w-full ">
       <div className="w-full flex flex-col gap-10  items-center justify-center ">
@@ -24,10 +25,10 @@ export const GenreEffect = ({ genreName, movies }: Props) => {
 
           <div>
             <h1 className="text-md mb-3 ml-15 flex gap-2  font-extra-bold ">
-              <span>{movies.results?.length}</span>titles in "{genreName}"
+              <span>{movieList.length}</span> titles in "{genreName}"
             </h1>
             <div className="w-[806px] flex-wrap  gap-3 justify-center flex">
-              {movies.results?.splice(0, 12).map((movie: MovieType) => (
+              {movieList.slice(0, 12).map((movie: MovieType) => (
                 <MovieCard
                   key={movie.id}
                   movie={movie}
